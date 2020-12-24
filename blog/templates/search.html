@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Search Results for  {% endblock title %}
+{% block css %}
+<style>
+ .container{
+     min-height: 80vh;
+ }
+</style>
+{% endblock %}
+{% block body %} 
+
+<div class="container my-2">
+    <h3>Search Results</h3>
+    {% if blogs|length < 1 %}
+  
+   <p> Your search - <b>{{query|slice:"0:444"}}</b> - did not match any documents.</p>
+  
+   <p class="mb-2">Suggestions:</p> 
+    
+    <li> Make sure that all words are spelled correctly.</li>
+    <li> Try different keywords.</li>
+    <li> Try more general keywords.</li>
+  
+    {% endif %}
+    {% for post in blogs %} 
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 my-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-dark">Posted By {{post.author}}</strong>
+            <h3 class="mb-0">{{post.title}}</h3>
+            <!-- <div class="mb-1 text-muted">{{post.timeStamp}}</div> -->
+            <p class="card-text mb-auto">{{post.short_desc}}</p>
+  
+            <div class="my-2">
+                <a href="/blog/{{blog.slug}}" role="button" class="btn btn-primary">Continue reading</a>
+            </div>
+          </div>
+         
+        </div>
+        {% endfor post in blogs %}
+  </div>
+  
+  
+ 
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+

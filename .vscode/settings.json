@@ -1,0 +1,7 @@
+{
+    "editor.suggest.statusBar.visible": true,
+    "zenMode.hideStatusBar": false,
+    "git.enableStatusBarSync": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always"
+}
